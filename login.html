@@ -1,0 +1,117 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="/login.css">
+
+</head>
+<body style="background:#d1f2ff;">
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="jotform 2.png" style=" height: 40%; width:100% ; border:2px orange solid; border-radius:10px;">
+          <div class="text">Welcome JotForm</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="jotform template 2.png" style="height: 40%; width:100% ; border:2px orange solid; border-radius:10px;">
+          <div class="text">You can create cool forms with JotForm</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="telegram 2.jpg" style="height: 40%; width:100% ; border:2px orange solid; border-radius:10px;">
+          <div class="text">JotForm Telegram Bot is now active, you can create forms on Telegram</div>
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+    <div class="mini_bar">
+
+    </div>
+<div id="login">
+    <div class="text1">
+        <a>Welcome JotForm Telegram Bot authorization page</a>
+    </div>
+    <div class="text1">
+        <a>If you are already sign up to JotForm click "Authorization Button" for go back to Telegram</a>
+    </div>
+    <br>
+    <center>
+    <button class ="button"onclick="login()">Authorization Button</button>
+    </center>
+    <br>
+    <div class="hr">
+    </div>
+    <div class ="price">
+        <center>
+        <img src="Pricing.png" style="border:2px orange solid; border-radius:10px; position:static; width:75%;">
+        </center>
+    </div>
+    <div class ="text1">
+        <a>More information about pricing click the button</a>
+    </div>
+    <center>
+    <a href="https://www.jotform.com/pricing/" target="_blank" class="button">Pricing Page</a>
+    </center>
+</div>
+<script src="https://js.jotform.com/JotForm.js"></script>
+<script>
+JF.initialize({appName: "Jotform Telegram Bot" , accessType: 'full'});
+//JF.login(success, error) method takes two optional arguments
+//Both arguments should be function 
+//First argument will be called after successful login
+//Second argument will be called if authorization fails
+function login(){
+    JF.login(
+        function success(){
+            JF.getForms(function(response){
+                    var apiKey = JF.getAPIKey();
+                    document.getElementById("login").innerHTML="You Succesfully Login the system <br/><a href=https://t.me/jotform_bot?start=api_"+apiKey+">Click Here to return Bot</a>";
+                    document.getElementById("login").style.color = "black";
+                    document.getElementById("login").style.fontFamily = "arial";
+                    document.getElementById("login").style.fontSize = "larger";
+                    document.getElementById("login").style.fontWeight = "bolder";
+                    document.getElementById("login").style.textAlign = "center";
+                    //document.write("You Succesfully Login the system <br/>");
+                    //document.write("<a href=https://t.me/jotform_bot?start=api_"+apiKey+">Click Here to return Bot</a>");
+            });
+        },
+
+        function error(){
+            window.alert("Could not authorize user");
+        }
+    );
+}
+</script>
+</body>
+</html>
+<script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
