@@ -1,6 +1,8 @@
 # Telegram-JotForm-ChatBot
-This is my first internship project which is Telegram based chatbot system for JotForm company. There are several features and steps in this project
+This is my first internship project which is Telegram based chatbot system for JotForm company.
 ![Jotform_logo](https://user-images.githubusercontent.com/58821198/178030039-9407bd55-3d6c-4e5c-a1d6-e2df1d5f569d.png)
+
+ There are several features and steps in this project
 
 # Connection
 This system is used with NGROK for sending and receiving GET/POST requests from Telegram API.
