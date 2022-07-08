@@ -21,7 +21,7 @@ $ngrok = ##### (ngrok URL, it is deleted due to privilege);
 
 /* Send Message function which is coming from api.telegram */
 function sendMessage($chatID , $text){
-    $url = "https://api.telegram.org/bot1296708550:AAFcfS9g3UdqNM6jazSNQbVnVR8v85364uY/sendMessage?chat_id=".$chatID."&text=".urlencode($text);
+    $url = "https://api.telegram.org/BOT_URL/sendMessage?chat_id=".$chatID."&text=".urlencode($text);
     file_get_contents($url);
 }
 $command = new command();
